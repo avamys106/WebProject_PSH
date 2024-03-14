@@ -31,12 +31,12 @@
 <!-- css -->
 <script type="text/javascript">
 	function validateForm(form) {
-		if (form.user_id.value == "") {
+		if (form.id.value == "") {
 			alert("아이디를 입력하세요.");
-			form.user_id.focus();
+			form.id.focus();
 			return false;
 		}
-		if (form.user_pw.value == "") {
+		if (form.pass.value == "") {
 			alert("패스워드를 입력하세요.");
 			return false;
 		}

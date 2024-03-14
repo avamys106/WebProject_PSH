@@ -6,6 +6,9 @@
     font-size: 13px;
 }
 
+.newPagination {
+	margin: 0 auto;
+}
 /* 기존 페이지 .main 패딩값 */
 .main {
     padding-top: 48px;

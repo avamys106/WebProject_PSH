@@ -138,18 +138,18 @@
                   </div>
                 </li>
                 <li>
-                  <a href="#">브랜드</a>
+                  <a href="#">커뮤니티</a>
                   <div class="depth02_wrap">
                     <div class="flex_box">
                       <ul class="depth02">
                         <li>
-                          <a href="#">오설록 스토리</a>
+                          <a href="board_free.do">자유게시판</a>
                         </li>
                         <li>
-                          <a href="#">제주 티뮤지엄</a>
+                          <a href="#">Q&A게시판</a>
                         </li>
                         <li>
-                          <a href="#">매장 소개 및 예약</a>
+                          <a href="#">자료실게시판</a>
                         </li>
                       </ul>
                       <div class="img_wrap">
@@ -197,11 +197,11 @@
                       </ul>
                     </li>
                     <li>
-                      <a class="last_list" href="#">브랜드<span></span></a>
+                      <a class="last_list" href="#">커뮤니티<span></span></a>
                       <ul class="m_depth02">
-                        <li><a href="#">오설록 스토리</a></li>
-                        <li><a href="#">제주 티뮤지엄</a></li>
-                        <li><a href="#">매장 소개 및 예약</a></li>
+                        <li><a href="board_free.do">자유게시판</a></li>
+                        <li><a href="#">Q&A게시판</a></li>
+                        <li><a href="#">자료실게시판</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -264,7 +264,7 @@
                 <ul>
                   <li>
                   	<c:if test="${sessionId != null}" var="id">
-                  		<a href="#">개인정보 수정</a>
+                  		<a href="myInfo.do">개인정보 수정</a>
                   	</c:if>
                   	<c:if test="${not id}">
                   		<a href="login.do">로그인</a>

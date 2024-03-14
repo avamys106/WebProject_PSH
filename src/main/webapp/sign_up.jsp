@@ -168,7 +168,7 @@
 							</ul>
 						</div>
 						<div class="join_box">
-							<button type="submit" class="btn_join_cancel">취소</button>
+							<button onclick="location.href='index.jsp'" type="button" class="btn_join_cancel">취소</button>
 							<button type="submit" class="btn_join_sign_up">회원가입</button>
 						</div>
 					</form>

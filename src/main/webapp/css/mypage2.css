@@ -286,7 +286,7 @@ body.modal_open {
     .cdj_renew .pw_check .input_wrap .input_box.id_box {margin-bottom: 20px;}
 
     /* 마이페이지 - 회원정보 수정 */
-    .cdj_renew .my_info_mdfy .inner_wrap {padding: 0 20px;}
+    .cdj_renew .my_info_mdfy .inner_wrap {padding: 20px 20px;}
     .cdj_renew .my_info_mdfy .section01 {padding-bottom: 0; margin-bottom: 60px; border-bottom: none;}
     .cdj_renew .my_info_mdfy .section01 .btn_typeA .btn_w100 {width: 180px; margin-left: auto; margin-right: auto;}
     .cdj_renew .my_info_mdfy .section01 .delivery_info2 {margin-bottom: 30px;}

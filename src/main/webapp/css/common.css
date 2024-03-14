@@ -566,7 +566,7 @@ textarea {
 }
 
 /* 버튼 */
-.btn {
+/* .btn{
   display: inline-block;
   vertical-align: middle;
   padding: 0px 10px;
@@ -575,7 +575,27 @@ textarea {
   border-radius: 4px;
   border: 1px solid #292929;
   margin-right: 10px;
+} */
+.newPagination {
+	display: flex;
+	justify-content: center;
 }
+
+.newPagination .btn{
+	display: block;
+}
+
+
+/* .btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 10px;
+  line-height: 38px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #292929;
+  margin-right: 10px;
+} */
 .primary_btn {
   background: var(--primary-color);
   border-color: var(--primary-color);

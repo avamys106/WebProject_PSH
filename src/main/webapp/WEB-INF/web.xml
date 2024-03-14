@@ -15,7 +15,7 @@
 	</welcome-file-list>
 
 	<session-config>
-		<session-timeout>1</session-timeout>
+		<session-timeout>30</session-timeout>
 	</session-config>
 
 	<context-param>
@@ -36,6 +36,15 @@
 		<servlet-name>MVCBoardList</servlet-name>
 		<url-pattern>/mvcboard/list.do</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BoardList</servlet-name>
+		<servlet-class>board.ListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardList</servlet-name>
+		<url-pattern>/board_free.do</url-pattern>
+	</servlet-mapping>
 
 
 
@@ -48,6 +57,7 @@
 		<url-pattern>/login.do</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet>
 		<servlet-name>sign_up</servlet-name>
 		<servlet-class>member.SignUpController</servlet-class>
@@ -56,6 +66,17 @@
 		<servlet-name>sign_up</servlet-name>
 		<url-pattern>/sign_up.do</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>myInfo</servlet-name>
+		<servlet-class>member.MyInfoController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myInfo</servlet-name>
+		<url-pattern>/myInfo.do</url-pattern>
+	</servlet-mapping>
+
 
 
 	<servlet>
