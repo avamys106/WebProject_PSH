@@ -54,12 +54,11 @@ public class BoardDAO extends DBCP {
 				
 				dto.setIdx(rs.getString(1));
 				dto.setId(rs.getString(2));
-				dto.setName(rs.getString(3));
-				dto.setTitle(rs.getString(4));
-				dto.setContent(rs.getString(5));
-				dto.setPostdate(rs.getDate(6));
-				dto.setPass(rs.getString(7));
-				dto.setVisitcount(rs.getInt(8));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setPostdate(rs.getDate(5));
+				dto.setPass(rs.getString(6));
+				dto.setVisitcount(rs.getInt(7));
 				
 				board.add(dto);
 			}
@@ -68,4 +67,104 @@ public class BoardDAO extends DBCP {
 		} return board;
 	}
 	
+	public int insertWrite(BoardDTO dto) {
+		int result = 0;
+		try {
+			String query = " INSERT INTO freeboard ( "
+					+ " idx, id, title, content, pass ) "
+					+ " VALUES ( "
+					+ " board_number.NEXTVAL, ?, ?, ?, ?) ";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getTitle());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getPass());
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	public BoardDTO selectView (String idx) {
+		BoardDTO dto = new BoardDTO();
+		String query = " SELECT * FROM freeboard WHERE idx=? ";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, idx);
+			rs = psmt.executeQuery();
+			
+			if (rs.next()) {
+				dto.setIdx(rs.getString(1));
+				dto.setId(rs.getString(2));
+				dto.setTitle(rs.getString(3));
+				dto.setContent(rs.getString(4));
+				dto.setPostdate(rs.getDate(5));
+				dto.setPass(rs.getString(6));
+				dto.setVisitcount(rs.getInt(7));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
+	public void updateVisitCount (String idx) {
+		String query = " UPDATE freeboard SET "
+					+ " visitcount=visitcount+1 "
+					+ " WHERE idx=? ";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, idx);
+			psmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean confirmPassword(String pass, String idx) {
+		boolean isCorr = true;
+		try {
+			String sql = " SELECT COUNT(*) FROM freeboard WHERE pass=? AND idx=? ";
+			psmt = con.prepareStatement(sql);
+			psmt.setString(1, pass);
+			psmt.setString(2, idx);
+			rs = psmt.executeQuery();
+			rs.next();
+			if (rs.getInt(1) == 0) {
+				isCorr = false;
+			}
+		} catch (Exception e) {
+			isCorr = false;
+			e.printStackTrace();
+		}
+		return isCorr;
+	}
+	
+	public int deletePost(String idx) {
+		int result = 0;
+		try {
+			String query = " DELETE FROM freeboard WHERE idx=? ";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, idx);
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

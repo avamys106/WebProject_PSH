@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ include file="isLoggedin.jsp"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -30,9 +31,11 @@
 <%-- <link rel="stylesheet"
 	href="css/style.css?after?v=<?php echo time(); ?>"> --%>
 <link rel="stylesheet" href="css/style2.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="css/mypage1.css?v=<?php echo time(); ?>">
+<link rel="stylesheet"
+	href="css/mypage1.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/mypage2.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="css/common.css?after?v=<?php echo time(); ?>">
+<link rel="stylesheet"
+	href="css/common.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/main.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/renew.css?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/sub.css?v=<?php echo time(); ?>">
@@ -40,6 +43,15 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/ui-common.js?v=<?php echo time(); ?>"></script>
+<script type="text/javascript">
+	function validateForm(form) {
+		if (form.pass.value == "") {
+			alert("비밀번호를 입력하세요.");
+			form.pass.focus();
+			return false;
+		}
+	}
+</script>
 </head>
 <div id="wrap">
 	<div class="top_banner">
@@ -266,151 +278,86 @@
 	<!-- 타이틀 : S -->
 	<section class="section page_tit_box mypageT">
 		<div class="w1200">
-			<h2 class="page_tit">커뮤니티</h2>
+			<h2 class="page_tit">삭제하기</h2>
 		</div>
 	</section>
 	<!-- 타이틀 : E -->
-
-	<!-- 탭 영역 : S -->
-	<div class="my_tab">
-		<div class="my_tab_inner">
-			<ul class="my_tab_list tab3">
-				<!-- 활성된 페이지 .item에 on 클래스 추가 -->
-				<li class="item on"><a href="/kr/ko/cs/notice/news"
-					class="link_text">자유게시판</a></li>
-				<li class="item "><a href="/kr/ko/cs/notice/event"
-					class="link_text">Q&A게시판</a></li>
-				<li class="item "><a href="/kr/ko/cs/notice/announce"
-					class="link_text">자료실게시판</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- 탭 영역 : E -->
-
-	<style>
-.cdj_renew .my_cs_notice .notice_search .search .box01 button {
-	position: absolute;
-	top: 50%;
-	right: 12px;
-	transform: translateY(-50%);
-	width: 24px;
-	height: 24px;
-	background:
-		url(https://image.osulloc.com/kr/ko/static_cdj/images/mypage/icon_search.png)
-		no-repeat center/15px 17px;
-	text-indent: -9999em;
-}
-
-.cdj_renew .my_cs_notice .notice_search .search .box01::after {
-	display: none;
-}
-</style>
-	<!-- 컨텐츠 : S -->
-	<div class="my_cs_notice">
-		<section class="section">
-			<div class="w1200">
-				<div class="notice_search">
-					<div class="inner_box">
-						<form id="searchForm" name="searchForm"
-							action="/kr/ko/cs/notice/news" onsubmit="return false;">
-							<input type="hidden" id="keyword" name="keyword" value="news">
-							<div class="search">
-								<div class="box01">
-									<input type="text" id="notice-search" name="q" class="inp_text"
-										placeholder="텍스트를 입력해주세요" value="">
-									<button type="button" class="button moBlock btnSearch"
-										title="검색" onclick="">검색</button>
-								</div>
-								<div class="box02">
-									<button type="button" class="button pcBlock btnSearch"
-										title="검색">검색</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-		<form method="get">
+	<form name="writeFrm" action="board_pass.do"
+		method="POST" onsubmit="return validateForm(this);">
+		<div class="my_cs_qna">
 			<section class="section">
-				<div class="w1200">
-					<div class="notice_list_table">
-						<div class="table_header pcBlock">
-							<ul class="list">
-								<li class="item">번호</li>
-								<li class="item">제목</li>
-								<li class="item">글쓴이</li>
-								<li class="item">조회</li>
-								<li class="item">등록일</li>
-							</ul>
-						</div>
-						<c:choose>
-							<c:when test="${ empty boardLists }">
-								<tr>
-									<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<c:forEach items="${ boardLists }" var="row" varStatus="loop">
-									<div class="table_con">
-										<ul class="list">
-											<li class="item">
-												<p class="num pcBlock">${ map.totalCount - (((map.pageNum) * map.pageSize)
-											+ loop.index)}</p>
-												<p class="subject">
-													<a class="link_text" href="board_view.do?idx=${ row.idx }">
-														${ row.title } </a>
-												<p class="writer">${ row.id }</p>
-												<p class="visit">${ row.visitcount }</p>
-												<p class="date">${ row.postdate }</p>
-											</li>
-										</ul>
-									</div>
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
-					</div>
-					<div class="btnbox">
-					<button class="write_btn" onclick="location.href='board_write.do'" type="button">글쓰기
-						
-					</button>
+				<div class="qna_form_info">
+					<div class="inner_box">
+						<p class="top_text">
+							해당 페이지는 게시판 테스트 페이지 이므로<br class="moBlock"> 상업용 목적으로의 사용을
+							금지합니다.
+						</p>
+						<ul class="dot_list">
+							<li class="item">게시글을 삭제하면 복구가 불가능하오니 한번더 고민해주시기 바랍니다.</li>
+							<li class="item">게시글을 삭제하려면 패스워드 인증을 거쳐야 합니다.</li>
+							<li class="item">수정을 원하시는 경우 삭제 후 재등록이 아닌 수정페이지를 이용하시기 바랍니다.</li>
+						</ul>
 					</div>
 				</div>
 			</section>
-		</form>
-		<!-- pagination : S -->
-		<div id="pagination" class="newPagination for-mobile ">
 
+				<div class="qna_form_wrap">
+					<div class="inner_box">
+						<input type="hid-den" name="idx" value="${ param.idx }" /> 
+						<input type="hid-den" name="mode" value="${ param.mode }" />
 
-
-
-			<span class="btn btn-home is-disabled">페이지 처음으로</span> <span
-				class="btn btn-prev is-disabled">이전 페이지</span> <a
-				href="/kr/ko/cs/notice/news?q" class="num "
-				data-track-name="1 페이지 이동">1</a> <a
-				href="/kr/ko/cs/notice/news?q&p=1" class="num "
-				data-track-name="2 페이지 이동">2</a> <a
-				href="/kr/ko/cs/notice/news?q&p=2" class="num "
-				data-track-name="3 페이지 이동">3</a> <a
-				href="/kr/ko/cs/notice/news?q&p=3" class="num "
-				data-track-name="4 페이지 이동">4</a> <a
-				href="/kr/ko/cs/notice/news?q&p=4" class="num "
-				data-track-name="5 페이지 이동">5</a> <a
-				href="/kr/ko/cs/notice/news?q&p=5" class="btn btn-next"
-				data-track-name="뒷 페이지 그룸 이동">다음 페이지</a> <a
-				href="/kr/ko/cs/notice/news?q&p=14" class="btn btn-end "
-				data-track-name="맨 뒷 페이지 이동"> 페이지 끝으로 </a>
-
-
-
-
+						<div class="inner_box">
+							<div class="item">
+								<div class="category">
+									<p class="text">
+										비밀번호<span class="req"></span>
+									</p>
+								</div>
+								<div class="form_box">
+									<div class="form_inner_box">
+										<div class="inp_selectbox">
+											<input name="pass" type="password" id="pass"
+												class="inp_select">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<section class="section">
+				<div class="w1200">
+					<div class="qna_form_btn">
+						<div class="btn_box">
+							<button type="button" class="button cancle_btn" onclick="location.href='board_free.do'">취소</button>
+						</div>
+						<!-- 등록버튼 - 필수값 모두 등록시 활성화됨 save_btn에 클래스 on 추가 -->
+						<div class="btn_box">
+							<button type="submit" id="save_btn" class="button save_btn"
+								>삭제</button>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
+	</form>
 
-		<!-- pagination : E -->
-	</div>
-	<!-- 컨텐츠 : E -->
+
+
+
+
+
+
+	<!-- pc용 마이페이지 메뉴 : E -->
+
+
+
+
+
 
 </main>
+
+
 
 <footer id="footer">
 	<div class="footer_pc">

@@ -40,6 +40,7 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/ui-common.js?v=<?php echo time(); ?>"></script>
+
 </head>
 <div id="wrap">
 	<div class="top_banner">
@@ -263,154 +264,279 @@
 </main>
 
 <main class="main cdj_renew">
-	<!-- 타이틀 : S -->
-	<section class="section page_tit_box mypageT">
-		<div class="w1200">
-			<h2 class="page_tit">커뮤니티</h2>
-		</div>
-	</section>
-	<!-- 타이틀 : E -->
-
-	<!-- 탭 영역 : S -->
-	<div class="my_tab">
-		<div class="my_tab_inner">
-			<ul class="my_tab_list tab3">
-				<!-- 활성된 페이지 .item에 on 클래스 추가 -->
-				<li class="item on"><a href="/kr/ko/cs/notice/news"
-					class="link_text">자유게시판</a></li>
-				<li class="item "><a href="/kr/ko/cs/notice/event"
-					class="link_text">Q&A게시판</a></li>
-				<li class="item "><a href="/kr/ko/cs/notice/announce"
-					class="link_text">자료실게시판</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- 탭 영역 : E -->
-
-	<style>
-.cdj_renew .my_cs_notice .notice_search .search .box01 button {
-	position: absolute;
-	top: 50%;
-	right: 12px;
-	transform: translateY(-50%);
-	width: 24px;
-	height: 24px;
-	background:
-		url(https://image.osulloc.com/kr/ko/static_cdj/images/mypage/icon_search.png)
-		no-repeat center/15px 17px;
-	text-indent: -9999em;
-}
-
-.cdj_renew .my_cs_notice .notice_search .search .box01::after {
-	display: none;
-}
-</style>
-	<!-- 컨텐츠 : S -->
-	<div class="my_cs_notice">
-		<section class="section">
+		<!-- 타이틀 : S -->
+		<section class="section page_tit_box mypageT">
 			<div class="w1200">
-				<div class="notice_search">
-					<div class="inner_box">
-						<form id="searchForm" name="searchForm"
-							action="/kr/ko/cs/notice/news" onsubmit="return false;">
-							<input type="hidden" id="keyword" name="keyword" value="news">
-							<div class="search">
-								<div class="box01">
-									<input type="text" id="notice-search" name="q" class="inp_text"
-										placeholder="텍스트를 입력해주세요" value="">
-									<button type="button" class="button moBlock btnSearch"
-										title="검색" onclick="">검색</button>
-								</div>
-								<div class="box02">
-									<button type="button" class="button pcBlock btnSearch"
-										title="검색">검색</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
+				<h2 class="page_tit">1:1문의</h2>
 			</div>
 		</section>
-		<form method="get">
-			<section class="section">
-				<div class="w1200">
-					<div class="notice_list_table">
-						<div class="table_header pcBlock">
-							<ul class="list">
-								<li class="item">번호</li>
-								<li class="item">제목</li>
-								<li class="item">글쓴이</li>
-								<li class="item">조회</li>
-								<li class="item">등록일</li>
+		<!-- 타이틀 : E -->
+		
+		
+
+
+
+
+
+
+<!-- pc용 마이페이지 메뉴 : S -->
+<div class="w1200 pcBlock">
+	<nav class="my_nav">
+		<ul class="nav_list_dep1">
+			<li class="item_dep1">
+				<a href="/kr/ko/mypage/order/normal" class="link_text">주문/예약관리</a>
+				<div class="box">
+					<ul class="nav_list_dep2">
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/order/normal" class="link_text">주문/배송 조회</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/order/otherThenList" class="link_text">취소/반품/교환 조회</a>
+						</li>
+                        
+						
+						
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/reservation/list" class="link_text">예약 조회</a>
+						</li>
+						
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/present/receive" class="link_text">선물함</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+				<li class="item_dep1">
+					<a href="/kr/ko/mypage/subs/list?standingOrderType=A" class="link_text">정기배송</a>
+					<div class="box">
+						<ul class="nav_list_dep2">
+							
+							<li class="item_dep2">
+								<a href="/kr/ko/mypage/subs/list?standingOrderType=A" class="link_text">정기배송</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			
+			<li class="item_dep1">
+				<a href="/kr/ko/mypage/wishlist/list" class="link_text">활동내역</a>
+				<div class="box">
+					<ul class="nav_list_dep2">
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/wishlist/list" class="link_text">찜하기</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/userHistory/list" class="link_text">히스토리</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/userReview/write" class="link_text">후기관리</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="item_dep1">
+				<a href="/kr/ko/cs/member/benefit" class="link_text">나의 혜택</a>
+				<div class="box">
+					<ul class="nav_list_dep2">
+						<li class="item_dep2">
+							<a href="/kr/ko/cs/member/benefit" class="link_text">멤버십혜택</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/coupon" class="link_text">보유 쿠폰</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/beautypoint/list" class="link_text">뷰티포인트</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/point" class="link_text">찻잎포인트</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="item_dep1">
+				<a href="/kr/ko/mypage/detail/profileCheck" class="link_text">정보관리</a>
+				<div class="box">
+					<ul class="nav_list_dep2">
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/detail/profileCheck" class="link_text">회원정보 관리</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/addressbook" class="link_text">배송지 관리</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="item_dep1">
+				<a href="/kr/ko/cs" class="link_text">고객센터</a>
+				<div class="box">
+					<ul class="nav_list_dep2">
+						<li class="item_dep2">
+							<a href="/kr/ko/cs/faq" class="link_text">자주찾는 질문</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/mypage/qna" class="link_text">1:1 문의내역</a>
+						</li>
+						<li class="item_dep2">
+							<a href="/kr/ko/cs/notice" class="link_text">공지사항</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<div class="my_nav_bg"></div>
+	</nav>
+</div>
+<!-- pc용 마이페이지 메뉴 : E -->
+
+
+
+
+		
+		<!-- 컨텐츠 : S -->
+		<form name="qna-form" id="qna-form" action="/kr/ko/mypage/qna/add" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+			<div class="my_cs_qna">
+				<section class="section">
+					<div class="qna_form_info">
+						<div class="inner_box">
+							<p class="top_text">문의사항을 남겨주시면 빠른 시간내에<br class="moBlock"> 답변을 드리도록 하겠습니다.</p>
+							<ul class="dot_list">
+								<li class="item">이메일, 핸드폰번호를 변경하려면 <a class="link_text" href="/kr/ko/mypage/detail/mypageInfo">회원정보수정</a> 페이지에서 변경해주세요.</li>
+								<li class="item">문의하시기 전 <a class="link_text" href="/kr/ko/cs/faq">FAQ</a>를 참고해주세요.</li>
+								<li class="item">한번 등록한 상담내용은 수정이 불가능합니다.</li>
+								<li class="item">수정을 원하시는 경우 삭제 후 재등록하셔야 합니다.</li>
+								<li class="item">알림 받기를 설정하시면 1:1 문의 답변완료시 고객님의 메일과 카카오톡 알림톡으로도 확인하실 수 있습니다.</li>
+								<li class="item">고객상담센터 답변가능시간 <br class="moBlock">오전 9시~오후 6시(토/일/공휴일 제외)</li>
 							</ul>
 						</div>
-						<c:choose>
-							<c:when test="${ empty boardLists }">
-								<tr>
-									<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<c:forEach items="${ boardLists }" var="row" varStatus="loop">
-									<div class="table_con">
-										<ul class="list">
-											<li class="item">
-												<p class="num pcBlock">${ map.totalCount - (((map.pageNum) * map.pageSize)
-											+ loop.index)}</p>
-												<p class="subject">
-													<a class="link_text" href="board_view.do?idx=${ row.idx }">
-														${ row.title } </a>
-												<p class="writer">${ row.id }</p>
-												<p class="visit">${ row.visitcount }</p>
-												<p class="date">${ row.postdate }</p>
-											</li>
-										</ul>
+					</div>
+				</section>
+				
+				<section class="section">
+					<div class="qna_form_wrap">
+						<div class="inner_box">
+							<div class="item">
+								<div class="category">
+									<p class="text">문의 유형<span class="req">*</span></p>
+								</div>
+								<div class="form_box">
+									<div class="form_inner_box">
+										<div class="inp_selectbox">
+											<select name="type" id="selectQnaType" class="inp_select">
+												<option value="" selected="">문의 유형 선택</option>
+												
+												
+													<option value="order" >주문/결제</option>
+												
+													<option value="delivery" >배송</option>
+												
+													<option value="refund" >환불/반품/교환</option>
+												
+													<option value="event" >이벤트/쿠폰</option>
+												
+													<option value="membership" >회원/포인트</option>
+												
+													<option value="site" >사이트 이용/기타</option>
+												
+											</select>
+										</div>
+										<div class="btnWrap">
+											<button class="btnType" id="orderPopupBtn" onclick="modalDisplay();" style="display: none;">주문 상품 선택</button>
+										</div>
 									</div>
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
+								</div>
+							</div>
+							
+							<div class="item" id="selectedItemInfo" style="display: none;">
+								<div class="prdWrap">
+									<input type="hidden" id="orderId" name="orderId">
+									<input type="hidden" id="itemRevisionId" name="itemRevisionId">
+						            <div class="prdBox">
+						                <div class="prdTop">
+						                    <p class="orderNum"></p>
+						                    <span class="del" onclick="itemInfoDel();"></span>
+						                </div>
+						                <ul class="itemsList">
+						                    <li class="item">
+						                        <div class="imgBox"></div>
+						                        <dl class="descCnt"></dl>
+						                    </li>
+						                </ul>
+						            </div>
+						        </div>
+							</div>
+							
+							<div class="item">
+								<div class="category">
+									<p class="text">제목<span class="req">*</span></p>
+								</div>
+								<div class="form_box">
+									<input type="text" name="title" id="qna-title" class="inp_text" title="제목을 입력해주세요" placeholder="제목을 입력해주세요" maxlength="60">
+								</div>
+							</div>
+							<div class="item">
+								<div class="category">
+									<p class="text">문의 내용<span class="req">*</span></p>
+								</div>
+								<div class="form_box">
+									<div class="text_area">
+										<textarea name="text" id="qna-txt" cols="" rows="" maxlength="2000" placeholder="내용을 입력해주세요." class="qna_text_area"></textarea>
+										<div class="text_cnt"><span>0</span>/2000</div>
+									</div>
+								</div>
+								<div class="uploaderArea">
+									<div class="uploadBox">
+										<div class="inpFileWrap">
+											<i></i>
+											<label for="fileUploader" class="btnType btnFileUploader">파일 업로드</label>
+											<input type="file" id="fileUploader" onchange="addFile(this);" multiple>
+										</div>
+									</div>
+									<div class="uploadFileName">
+										<ul class="file-list"></ul>
+									</div>
+								</div>
+								<div class="info"><p>* 최대 4개 / 10MB 이하의 파일만 등록 가능합니다.</p></div>
+							</div>
+							<div class="item">
+								<div class="qna_chk_box">
+									<div class="inp_check">
+										<input type="checkbox" id="qna_chk1" name="noticeEmailYn" value="Y" disabled="disabled">
+										<label for="qna_chk1">답변 완료 시 이메일로 받으시겠습니까?</label>
+										<p class="desc">
+											
+			                                	개인정보수정페이지에서 이메일주소를 등록해 주세요.
+			                                	
+			                                
+										</p>
+									</div>
+									<div class="inp_check">
+										<input type="checkbox" id="qna_chk2" name="noticeSmsYn" value="Y">
+										<label for="qna_chk2">답변 완료 시 SMS로 받으시겠습니까?</label>
+										<p class="desc">01*-49**-67**</p>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="btnbox">
-					<button class="write_btn" onclick="location.href='board_write.do'" type="button">글쓰기
-						
-					</button>
+				</section>
+				
+				<section class="section">
+					<div class="w1200">
+						<div class="qna_form_btn">
+							<div class="btn_box"><button type="button" class="button cancle_btn" onclick="">취소</button></div>
+							<!-- 등록버튼 - 필수값 모두 등록시 활성화됨 save_btn에 클래스 on 추가 -->
+							<div class="btn_box"><button type="button" id="save_btn" class="button save_btn" onclick="">등록</button></div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 		</form>
-		<!-- pagination : S -->
-		<div id="pagination" class="newPagination for-mobile ">
-
-
-
-
-			<span class="btn btn-home is-disabled">페이지 처음으로</span> <span
-				class="btn btn-prev is-disabled">이전 페이지</span> <a
-				href="/kr/ko/cs/notice/news?q" class="num "
-				data-track-name="1 페이지 이동">1</a> <a
-				href="/kr/ko/cs/notice/news?q&p=1" class="num "
-				data-track-name="2 페이지 이동">2</a> <a
-				href="/kr/ko/cs/notice/news?q&p=2" class="num "
-				data-track-name="3 페이지 이동">3</a> <a
-				href="/kr/ko/cs/notice/news?q&p=3" class="num "
-				data-track-name="4 페이지 이동">4</a> <a
-				href="/kr/ko/cs/notice/news?q&p=4" class="num "
-				data-track-name="5 페이지 이동">5</a> <a
-				href="/kr/ko/cs/notice/news?q&p=5" class="btn btn-next"
-				data-track-name="뒷 페이지 그룸 이동">다음 페이지</a> <a
-				href="/kr/ko/cs/notice/news?q&p=14" class="btn btn-end "
-				data-track-name="맨 뒷 페이지 이동"> 페이지 끝으로 </a>
-
-
-
-
-		</div>
-
-		<!-- pagination : E -->
-	</div>
-	<!-- 컨텐츠 : E -->
-
+		<!-- 컨텐츠 : E -->
+		
 </main>
+
+	
 
 <footer id="footer">
 	<div class="footer_pc">

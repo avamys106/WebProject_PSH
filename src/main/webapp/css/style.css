@@ -28,10 +28,10 @@
     padding: 0;
 }
 
-.cdj_renew input, .cdj_renew select, .cdj_renew button, .cdj_renew textarea {
+/* .cdj_renew input, .cdj_renew select, .cdj_renew button, .cdj_renew textarea {
     font-family: 'ad','sans-serif';
     font-weight: 400;
-    ;}
+    ;} */
 
 .cdj_renew .c_ptBg01 {
     background-color: #6C801A;

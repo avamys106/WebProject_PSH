@@ -3,7 +3,6 @@ package board;
 public class BoardDTO {
 	private String idx;
 	private String id;
-	private String name;
 	private String title;
 	private String content;
 	private java.sql.Date postdate;
@@ -20,12 +19,6 @@ public class BoardDTO {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	public String getTitle() {
 		return title;

@@ -20,7 +20,7 @@
 
 	<context-param>
 		<param-name>POSTS_PER_PAGE</param-name>
-		<param-value>2</param-value>
+		<param-value>10</param-value>
 	</context-param>
 	<context-param>
 		<param-name>PAGES_PER_BLOCK</param-name>
@@ -44,6 +44,15 @@
 	<servlet-mapping>
 		<servlet-name>BoardList</servlet-name>
 		<url-pattern>/board_free.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BoardWrite</servlet-name>
+		<servlet-class>board.WriteController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardWrite</servlet-name>
+		<url-pattern>/board_write.do</url-pattern>
 	</servlet-mapping>
 
 

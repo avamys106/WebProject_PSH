@@ -4,6 +4,17 @@
 
 
 /* 마이페이지 공통 */
+.main_text_box {
+	padding-top : 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn_box_wrap {
+	display: flex;
+	gap: 0 100px;
+	justify-content: center;
+}
 .cdj_renew .my_btn_type1 {width:127px;height:32px;line-height:32px;border:1px solid #ddd;border-radius:4px;color:#666;font-size:13px;text-align:center;}
 .cdj_renew .my_btn_type1::after {content:'';display:inline-block;width:5px;height:9px;background:url('/kr/ko/static_cdj/images/mypage/icon_btn_arr.png') no-repeat center / cover;margin-left:8px;}
 .cdj_renew .my_btn_type2 {width:90px;height:32px;line-height:32px;border:1px solid #ddd;border-radius:4px;color:#666;font-size:13px;text-align:center;}
@@ -1104,8 +1115,8 @@
 .cdj_renew .my_cs_notice .notice_list_table .table_con .list .item .date {font-size:12px;color:#999;}
 .cdj_renew .my_cs_notice .notice_list_view .view_header {padding:20px 0;border-bottom:1px solid #555;}
 .cdj_renew .my_cs_notice .notice_list_view .view_header .view_type {font-size:13px;color:#666;}
-.cdj_renew .my_cs_notice .notice_list_view .view_header .subject {font-size:18px;color:#333;font-weight:500;margin-top:10px;line-height:1.33;letter-spacing:-0.04em;}
-.cdj_renew .my_cs_notice .notice_list_view .view_header .date {font-size:13px;color:#999;margin-top:5px;}
+.cdj_renew .my_cs_notice .notice_list_view .view_header .subject {font-size:18px;color:#333;font-weight:500;margin-bottom:5px; margin-top:0px;line-height:1.33;letter-spacing:-0.04em;}
+.cdj_renew .my_cs_notice .notice_list_view .view_header .date {font-size:13px;color:#999;margin-bottom:10px;  margin-top:0px;}
 .cdj_renew .my_cs_notice .notice_list_view .view_con .text_box {padding:25px 0 40px;border-bottom:1px solid #E6E6E6;font-size:15px;color:#666;line-height:1.47;}
 .cdj_renew .my_cs_notice .notice_list_view .view_con .text_box a {color:#666;}
 .cdj_renew .my_cs_notice .notice_list_view .view_con .file_box {padding:20px 0 30px;}
@@ -1165,7 +1176,7 @@
   .cdj_renew .my_cs_notice .notice_list_view .view_con .file_box .file_list .item .item_inner {padding:20px 24px;}
   .cdj_renew .my_cs_notice .notice_list_view .view_con .file_box .file_list .item .file_name {font-size:15px;font-weight:500;color:#333;}
   .cdj_renew .my_cs_notice .notice_list_view .view_con .file_box .file_list .item .file_down::before {display:none;}
-  .cdj_renew .my_cs_notice .notice_list_view .btn_box .button {width:180px;height:48px;line-height:48px;}
+  .cdj_renew .my_cs_notice .notice_list_view .btn_box .button {margin-top : 60px; width:180px;height:48px;line-height:48px;}
 }
 
 
@@ -1218,7 +1229,7 @@
 .cdj_renew .my_cs_qna .qna_form_info .inner_box .dot_list .item + .item {margin-top:10px;}
 .cdj_renew .my_cs_qna .qna_form_info .inner_box .dot_list .item::before {content:'';display:inline-block;width:3px;height:3px;border-radius:50%;background-color:#BDBDBD;margin-right:8px;vertical-align:text-top;margin-top:4px;}
 .cdj_renew .my_cs_qna .qna_form_info .inner_box .dot_list .item .link_text {line-height:1.1;color:#333;border-bottom:1px solid #333;}
-.cdj_renew .my_cs_qna .qna_form_wrap .inner_box {padding:25px 20px 30px;border-bottom:1px solid #F6F6F6;}
+.cdj_renew .my_cs_qna .qna_form_wrap .inner_box {padding:25px 20px 30px;}
 .cdj_renew .my_cs_qna .qna_form_wrap .inner_box .item + .item {margin-top:20px;}
 .cdj_renew .my_cs_qna .qna_form_wrap .inner_box .item .category {margin-bottom:5px;}
 .cdj_renew .my_cs_qna .qna_form_wrap .inner_box .item .category .text {font-size:15px;font-weight:500;}
