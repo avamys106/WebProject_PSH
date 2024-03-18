@@ -36,21 +36,21 @@ public class PassController extends HttpServlet {
 		dao.close();
 		
 		if (confirmed) {
-			dao = new BoardDAO();
-			dao.deletePost(idx);
-			dao.close();
+			if (mode.equals("edit")) {
+				HttpSession session = req.getSession();
+				session.setAttribute("pass", pass);
+				resp.sendRedirect("board_edit.do?idx=" + idx);
+			} else if (mode.equals("delete")) {
+				dao = new BoardDAO();
+				BoardDTO dto = dao.selectView(idx);
+				int result = dao.deletePost(idx);
+				dao.close();
+				JSFunction.alertLocation(resp, "삭제되었습니다.", "board_free.do");
+			}
 		} else {
 			JSFunction.alertBack(resp, "비밀번호 검증에 실패했습니다.");
 		}
 		
-		/*
-		 * if (confirmed) { if (mode.equals("edit")) { HttpSession session =
-		 * req.getSession(); session.setAttribute("pass", pass);
-		 * resp.sendRedirect("board_edit.do?idx=" + idx); } else if
-		 * (mode.equals("delete")) { JSFunction.alertLocation(resp, "삭제되었습니다..",
-		 * "board_free.do"); } else { JSFunction.alertBack(resp, "비밀번호 검증에 실패했습니다.."); }
-		 * }
-		 */
 	}
 }
 

@@ -320,19 +320,7 @@
 					<div class="inner_box">
 						<div class="item" id="selectedItemInfo" style="display: none;">
 							<div class="prdWrap">
-								<input type="hidden" id="orderId" name="orderId"> <input
-									type="hidden" id="itemRevisionId" name="itemRevisionId">
 								<div class="prdBox">
-									<div class="prdTop">
-										<p class="orderNum"></p>
-										<span class="del" onclick="itemInfoDel();"></span>
-									</div>
-									<ul class="itemsList">
-										<li class="item">
-											<div class="imgBox"></div>
-											<dl class="descCnt"></dl>
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -344,8 +332,8 @@
 								</p>
 							</div>
 							<div class="form_box">
-								<input name="id" type="text" id="qna-title" class="inp_text_id" disabled="disabled"
-									value="${ sessionId }" maxlength="60">
+								<input name="id" type="text" id="qna-id" class="inp_text_id" 
+									value="${ sessionId }" readonly="readonly" maxlength="60">
 							</div>
 						</div>
 						<div class="item">
@@ -370,7 +358,6 @@
 									<textarea name="content" id="qna-txt" maxlength="2000"
 										placeholder="내용을 입력해주세요." class="qna_text_area"></textarea>
 									<div class="text_cnt">
-										<span>0</span>/2000
 									</div>
 								</div>
 							</div>
@@ -384,7 +371,7 @@
 									<div class="form_box">
 										<div class="form_inner_box">
 											<div class="inp_selectbox">
-												<input name="pass" type="text" id="pass" class="inp_select">
+												<input name="pass" type="password" id="pass" class="inp_select">
 											</div>
 										</div>
 									</div>

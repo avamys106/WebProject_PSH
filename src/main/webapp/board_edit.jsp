@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ include file="isLoggedin.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -30,17 +31,37 @@
 <%-- <link rel="stylesheet"
 	href="css/style.css?after?v=<?php echo time(); ?>"> --%>
 <link rel="stylesheet" href="css/style2.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="css/mypage1.css?after?v=<?php echo time(); ?>">
+<link rel="stylesheet"
+	href="css/mypage1.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/mypage2.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="css/common.css?after?v=<?php echo time(); ?>">
+<link rel="stylesheet"
+	href="css/common.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/main.css?after?v=<?php echo time(); ?>">
 <link rel="stylesheet" href="css/renew.css?v=<?php echo time(); ?>">
-<link rel="stylesheet" href="css/sub.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="css/sub.css?after?v=<?php echo time(); ?>">
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/ui-common.js?v=<?php echo time(); ?>"></script>
-
+<script type="text/javascript">
+	function validateForm(form) {
+		if (form.id.value == "") {
+			alert("작성자를 입력하세요.");
+			form.id.focus();
+			return false;
+		}
+		if (form.title.value == "") {
+			alert("제목을 입력하세요.");
+			form.title.focus();
+			return false;
+		}
+		if (form.content.value == "") {
+			alert("내용을 입력하세요.");
+			form.content.focus();
+			return false;
+		}
+	}
+</script>
 </head>
 <div id="wrap">
 	<div class="top_banner">
@@ -263,75 +284,104 @@
 	<section class="main_notice"></section>
 </main>
 
-<!-- pc용 마이페이지 메뉴 : E -->
-
-
-
-
-		
-		<!-- 컨텐츠 : S -->
 <main class="main cdj_renew">
-		<!-- 타이틀 : S -->
-		<section class="section page_tit_box mypageT">
-			<div class="w1200">
-				<h2 class="page_tit">상세보기</h2>
-			</div>
-		</section>
-		<div class="my_cs_notice">
+	<!-- 타이틀 : S -->
+	<section class="section page_tit_box mypageT">
+		<div class="w1200">
+			<h2 class="page_tit">글쓰기</h2>
+		</div>
+	</section>
+	<!-- 타이틀 : E -->
+
+
+
+
+
+
+
+
+	<!-- pc용 마이페이지 메뉴 : E -->
+
+
+
+
+
+	<!-- 컨텐츠 : S -->
+	<form name="writeFrm" action="board_edit.do" method="POST"
+		onsubmit="return validateForm(this);">
+		<div class="my_cs_qna">
 			<section class="section">
-				<div class="w1200">
-					<div class="notice_list_view">
-						<div class="view_header">
-							<p class="view_type moBlock">
-								<span>
-									
-										[공지사항]
-										
-										
-									
-								</span>
-							</p>
-							<p class="subject">${ dto.title }</p>
-							<p class="date">${ dto.postdate }</p>
-							<div class="main_text_box">
-							<p>작성자 : ${ dto.id }</p><p>조회수 : ${ dto.visitcount }</p>
+				<div class="qna_form_wrap">
+					<div class="inner_box">
+						<div class="item" id="selectedItemInfo" style="display: none;">
+							<div class="prdWrap">
+								<div class="prdBox">
+								</div>
 							</div>
 						</div>
-						<div class="view_con">
-							<!-- .text_box 텍스트 영역 -->
-							
-								<div class="text_box">
-									<p>${ dto.content }</p>
+
+						<div class="item">
+							<div class="category">
+								<p class="text">
+									작성자<span class="req"></span>
+								</p>
+							</div>
+							<div class="form_box">
+								<input name="id" type="text" id="qna-id" class="inp_text_id" 
+									value="${ dto.id }" readonly="readonly" maxlength="60">
+							</div>
+						</div>
+						<div class="item">
+							<div class="category">
+								<p class="text">
+									제목<span class="req">*</span>
+								</p>
+							</div>
+							<div class="form_box">
+								<input name="title" type="text" id="qna-title" class="inp_text"
+									value="${ dto.title }" placeholder="제목을 입력해주세요" maxlength="60">
+							</div>
+						</div>
+						<div class="item">
+							<div class="category">
+								<p class="text">
+									문의 내용<span class="req">*</span>
+								</p>
+							</div>
+							<div class="form_box">
+								<div class="text_area">
+									<textarea name="content" id="qna-txt" maxlength="2000"
+										placeholder="내용을 입력해주세요." class="qna_text_area">${ dto.content }</textarea>
+									<div class="text_cnt">
+									</div>
 								</div>
-							
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-							<!-- 첨부파일이 있을 경우 : S -->
-							
-							<!-- 첨부파일이 있을 경우 : E -->
-						</div>
-						<div class="btn_box_wrap">
+			<section class="section">
+				<div class="w1200">
+					<div class="qna_form_btn">
 						<div class="btn_box">
-							<button type="button" class="button" title="수정하기" onclick="location.href='board_edit.do?mode=edit&idx=${ param.idx}';">수정하기</button>
+							<button type="button" class="button cancle_btn"
+								onclick="location.href='board_free.do'">취소</button>
 						</div>
+						<!-- 등록버튼 - 필수값 모두 등록시 활성화됨 save_btn에 클래스 on 추가 -->
 						<div class="btn_box">
-							<button type="button" class="button" title="삭제하기" onclick="location.href='board_pass.do?mode=delete&idx=${ param.idx }';">삭제하기</button>
-						</div>
-						<div class="btn_box">
-							<button type="button" class="button" title="목록보기" onclick="location.href='board_free.do'">목록보기</button>
-						</div>
-
+							<button type="submit" id="save_btn" class="button save_btn">수정완료</button>
 						</div>
 					</div>
 				</div>
 			</section>
 		</div>
-		<!-- 컨텐츠 : E -->
-		
-	</main>
-		<!-- 컨텐츠 : E -->
-		
+	</form>
+	<!-- 컨텐츠 : E -->
 
-	
+</main>
+
+
 
 <footer id="footer">
 	<div class="footer_pc">

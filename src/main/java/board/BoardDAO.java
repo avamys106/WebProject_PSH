@@ -155,6 +155,25 @@ public class BoardDAO extends DBCP {
 		return result;
 		
 	}
+	
+	public int updatePost(BoardDTO dto) {
+		int result = 0;
+		try {
+			String query = " UPDATE freeboard "
+						+ " SET title=?, id=?, content=? "
+						+ " WHERE idx=? and pass=? ";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getId());
+			psmt.setString(3, dto.getContent());
+			psmt.setString(4, dto.getIdx());
+			psmt.setString(5, dto.getPass());
+			result = psmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return result;
+	}
 }
 
 

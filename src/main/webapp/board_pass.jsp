@@ -303,8 +303,8 @@
 
 				<div class="qna_form_wrap">
 					<div class="inner_box">
-						<input type="hid-den" name="idx" value="${ param.idx }" /> 
-						<input type="hid-den" name="mode" value="${ param.mode }" />
+						<input type="hidden" name="idx" value="${ param.idx }" /> 
+						<input type="hidden" name="mode" value="${ param.mode }" />
 
 						<div class="inner_box">
 							<div class="item">
