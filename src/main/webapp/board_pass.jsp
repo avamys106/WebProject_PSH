@@ -138,7 +138,7 @@
 							<div class="depth02_wrap">
 								<div class="flex_box">
 									<ul class="depth02">
-										<li><a href="board_free.jsp">자유게시판</a></li>
+										<li><a href="board_free.do">자유게시판</a></li>
 										<li><a href="#">Q&A게시판</a></li>
 										<li><a href="#">자료실게시판</a></li>
 									</ul>
@@ -184,7 +184,7 @@
 									</ul></li>
 								<li><a class="last_list" href="#">커뮤니티<span></span></a>
 									<ul class="m_depth02">
-										<li><a href="#">자유게시판</a></li>
+										<li><a href="board_free.do">자유게시판</a></li>
 										<li><a href="#">Q&A게시판</a></li>
 										<li><a href="#">자료실게시판</a></li>
 									</ul></li>
@@ -278,7 +278,7 @@
 	<!-- 타이틀 : S -->
 	<section class="section page_tit_box mypageT">
 		<div class="w1200">
-			<h2 class="page_tit">삭제하기</h2>
+			<h2 class="page_tit">비밀번호 검증</h2>
 		</div>
 	</section>
 	<!-- 타이틀 : E -->
@@ -334,7 +334,7 @@
 						<!-- 등록버튼 - 필수값 모두 등록시 활성화됨 save_btn에 클래스 on 추가 -->
 						<div class="btn_box">
 							<button type="submit" id="save_btn" class="button save_btn"
-								>삭제</button>
+								>검증</button>
 						</div>
 					</div>
 				</div>
@@ -364,7 +364,14 @@
 		<div class="footer_top">
 			<div class="top_line">
 				<div class="etc_menu">
-					<a class="login" href="login.do">로그인</a> <a class="tiktok" href="#">
+				<c:if test="${sessionId != null}" var="id">
+					<a class="login" href="logout.jsp">로그아웃</a>
+				</c:if>
+				<c:if test="${not id}">
+					<a class="login" href="login.do">로그인</a>
+				</c:if>
+					
+					<a class="tiktok" href="#">
 						<img src="images/sns_t.png" alt="틱톡">
 					</a> <a class="youtube" href="#"> <img src="images/sns_y.png"
 						alt="유튜브">

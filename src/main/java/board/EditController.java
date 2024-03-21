@@ -50,10 +50,10 @@ public class EditController extends HttpServlet {
 		
 		if(result == 1) {
 			session.removeAttribute("pass");
-			resp.sendRedirect("board_view.do?idx=" + idx);
+			resp.sendRedirect("board_view.do?idx="+idx);
 		} else {
 			JSFunction.alertLocation(resp, "비밀번호 검증을 다시 진행해주세요.",
-					"board_view.do?idx=" + idx);
+					"board_view.do?idx="+idx);
 		}
 	}
 }

@@ -102,7 +102,7 @@
 					<div class="input_form">
 						<span class="inp" id="password-span"> <input
 							type="password" name="pass" id="loginpassword"
-							placeholder="비밀번호 입력 (영문, 숫자, 특수문자 조합)">
+							placeholder="비밀번호 입력">
 							<button type="button" class="btn_del" style="display: none;">
 								<span class="blind">삭제</span>
 							</button>
@@ -117,8 +117,6 @@
 					<div class="btn_submit mt20">
 						<span class="checkboxA"> <input type="checkbox"
 							id="i_saveid" name="i_saveid" checked="" title="아이디 저장">
-							<label for="i_saveid">
-							<span class="checkbox_label">아이디 저장</span></label>
 						</span>
 					</div>
 					<div class="login_opt">
@@ -129,8 +127,8 @@
 				<ul class="bottom_menu">
 					<li><a href="javascript:;" id="search_id">아이디 찾기</a></li>
 					<li><a href="javascript:;" id="search_pwd">비밀번호 찾기</a></li>
-				</ul>
-				<button class="btnA btn_white btn_join_membership">
+				</ul>						
+				<button type="button" class="btnA btn_white btn_join_membership" onclick="location.href='sign_up.do'">
 					<span>아직 회원이 아니세요?</span> <em>회원가입</em>
 				</button>
 			</div>

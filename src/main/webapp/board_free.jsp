@@ -126,7 +126,7 @@
 							<div class="depth02_wrap">
 								<div class="flex_box">
 									<ul class="depth02">
-										<li><a href="board_free.jsp">자유게시판</a></li>
+										<li><a href="board_free.do">자유게시판</a></li>
 										<li><a href="#">Q&A게시판</a></li>
 										<li><a href="#">자료실게시판</a></li>
 									</ul>
@@ -172,7 +172,7 @@
 									</ul></li>
 								<li><a class="last_list" href="#">커뮤니티<span></span></a>
 									<ul class="m_depth02">
-										<li><a href="#">자유게시판</a></li>
+										<li><a href="board_free.do">자유게시판</a></li>
 										<li><a href="#">Q&A게시판</a></li>
 										<li><a href="#">자료실게시판</a></li>
 									</ul></li>
@@ -276,7 +276,7 @@
 		<div class="my_tab_inner">
 			<ul class="my_tab_list tab3">
 				<!-- 활성된 페이지 .item에 on 클래스 추가 -->
-				<li class="item on"><a href="/kr/ko/cs/notice/news"
+				<li class="item on"><a href="board_free.do"
 					class="link_text">자유게시판</a></li>
 				<li class="item "><a href="/kr/ko/cs/notice/event"
 					class="link_text">Q&A게시판</a></li>
@@ -417,7 +417,13 @@
 		<div class="footer_top">
 			<div class="top_line">
 				<div class="etc_menu">
-					<a class="login" href="login.do">로그인</a> <a class="tiktok" href="#">
+				<c:if test="${sessionId != null}" var="id">
+					<a class="login" href="logout.jsp">로그아웃</a>
+				</c:if>
+				<c:if test="${not id}">
+					<a class="login" href="login.do">로그인</a>
+				</c:if>
+					<a class="tiktok" href="#">
 						<img src="images/sns_t.png" alt="틱톡">
 					</a> <a class="youtube" href="#"> <img src="images/sns_y.png"
 						alt="유튜브">

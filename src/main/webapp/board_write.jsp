@@ -153,7 +153,7 @@
 							<div class="depth02_wrap">
 								<div class="flex_box">
 									<ul class="depth02">
-										<li><a href="board_free.jsp">자유게시판</a></li>
+										<li><a href="board_free.do">자유게시판</a></li>
 										<li><a href="#">Q&A게시판</a></li>
 										<li><a href="#">자료실게시판</a></li>
 									</ul>
@@ -409,7 +409,13 @@
 		<div class="footer_top">
 			<div class="top_line">
 				<div class="etc_menu">
-					<a class="login" href="login.do">로그인</a> <a class="tiktok" href="#">
+				<c:if test="${sessionId != null}" var="id">
+					<a class="login" href="logout.jsp">로그아웃</a>
+				</c:if>
+				<c:if test="${not id}">
+					<a class="login" href="login.do">로그인</a>
+				</c:if>
+					<a class="tiktok" href="#">
 						<img src="images/sns_t.png" alt="틱톡">
 					</a> <a class="youtube" href="#"> <img src="images/sns_y.png"
 						alt="유튜브">
